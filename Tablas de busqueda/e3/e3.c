@@ -32,40 +32,40 @@ int main(void){
     int vel = 0;
 
     switch (baudrate){
-    case A:  vel = velocidades[A];  
-             printf("%d baudios\n", vel);
-             break;
-    case B:  vel = velocidades[B];  
-             printf("%d baudios\n", vel);
-             break;
+    case A: vel = velocidades[A];  
+            printf("%d baudios\n", vel);
+            break;
+    case B: vel = velocidades[B];  
+            printf("%d baudios\n", vel);
+            break;
+
+    case C: vel = velocidades[C];  
+            printf("%d baudios\n", vel);
+            break;
+
+    case D: vel = velocidades[D];  
+            printf("%d baudios\n", vel);
+            break;
+
+    case E: vel = velocidades[E];  
+            printf("%d baudios\n", vel);
+            break;
+
+    case F: vel = velocidades[F];  
+            printf("%d baudios\n", vel);
+            break;
+
+    case G: vel = velocidades[G];  
+            printf("%d baudios\n", vel);
+            break;
+
+    case H: vel = velocidades[H];  
+            printf("%d baudios\n", vel);
+            break;
     
-    case C:  vel = velocidades[C];  
-             printf("%d baudios\n", vel);
-             break;
-    
-    case D:  vel = velocidades[D];  
-             printf("%d baudios\n", vel);
-             break;
-    
-    case E:  vel = velocidades[E];  
-             printf("%d baudios\n", vel);
-             break;
-    
-    case F:  vel = velocidades[F];  
-             printf("%d baudios\n", vel);
-             break;
-    
-    case G:  vel = velocidades[G];  
-             printf("%d baudios\n", vel);
-             break;
-    
-    case H:  vel = velocidades[H];  
-             printf("%d baudios\n", vel);
-             break;
-    
-    case I:  vel = velocidades[I];
-                        printf("%d baudios\n", vel);
-                        break;
+    case I: vel = velocidades[I];
+            printf("%d baudios\n", vel);
+            break;
 
     default:
         printf("la velocidad maxima es 921600 baudios\n");

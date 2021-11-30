@@ -44,26 +44,52 @@ bool lista_insertar_comienzo(lista_t *l, void *dato){
 
 
 bool lista_insertar_final(lista_t *l, void *dato){
+    
     struct nodo *nuevo = malloc(sizeof(struct nodo));
     if(nuevo == NULL) return false;
+    nuevo->next = NULL;
+    nuevo->dato = dato;
+   
+    if(l->prim == NULL) 
+        return lista_insertar_comienzo(l, dato);
+   
     struct nodo *act = l->prim;
-    while (act->next != NULL){
+    while (act->next != NULL)
         act = act->next;
-    }
+    act->next = nuevo;
+    return true;
 }
 
 void *lista_extraer_primero(lista_t *l){
-
+    if(l->prim == NULL) return NULL;
+    return l->prim->dato;
 }
+
 void *lista_extraer_ultimo(lista_t *l){
+    if (l->prim == NULL) return NULL;
+    if (l->prim->next == NULL) return l->prim->dato;
 
+    struct nodo *act = l->prim;
+    while(act->next != NULL){
+        act = act->next;
+    }
+    return act->dato;
 }
-void *lista_buscar(const lista_t *l, const void *dato, int (*cmp)(const void *a, const void *b)){
 
+void *lista_buscar(const lista_t *l, const void *dato, int (*cmp)(const void *a, const void *b)){
+    struct nodo *act = l->prim;
+
+    while(cmp(act->dato, dato) != 0){
+        act = act->next;
+    }
+    return act->dato;
 }
 
 void *lista_borrar(lista_t *l, const void *dato, int (*cmp)(const void *a, const void *b)){
-
+    struct nodo *act = l->prim;
+    while(cmp(dato, act->dato) != 0)
+        act = act->next;
+    
 }
 
 void lista_recorrer(const lista_t *l, bool (*visitar)(void *dato, void *extra), void *extra){
